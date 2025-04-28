@@ -15,13 +15,43 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* Custom styles */
+        .navbar {
+            background-color: #343a40; /* Dark background for navbar */
+        }
+        .navbar-brand {
+            color: #f8f9fa; /* Light text color */
+        }
+        .navbar-nav .nav-link {
+            color: #f8f9fa !important; /* Light text color for nav links */
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffc107 !important; /* Yellow color on hover */
+        }
+        .card {
+            border: 2px solid #343a40; /* Dark border */
+            background-color: #2d2d2d; /* Dark card background */
+        }
+        .card-body {
+            color: #f8f9fa; /* Light text inside the card */
+        }
+        .card-title {
+            color: #ffc107; /* Yellow color for job profile */
+        }
+        .card-footer {
+            background-color: #343a40; /* Dark footer */
+        }
+        .card-text strong {
+            color: #ffc107; /* Yellow color for strong labels */
+        }
+    </style>
 </head>
 <body>
 
-
-<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <a class="navbar-brand fs-1 fw-medium" href="#">Telusko Job Portal Web App</a>
+        <a class="navbar-brand fs-1 fw-medium" href="#">Kareem Job Portal Web App</a>
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false"
@@ -33,38 +63,37 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="viewalljobs">All Jobs</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://telusko.com/">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-
 <div class="container mt-5">
-    <h2 class="mb-4 text-center font-weight-bold">Job Post List</h2>
+    <h2 class="mb-4 text-center font-weight-bold text-warning">Job Post List</h2>
 
     <div class="row row-cols-2">
         <c:forEach var="jobPost" items="${jobPosts}">
 
             <div class="col mb-4">
-                <div class="card border-dark bg-dark text-white">
+                <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">${jobPost.postProfile}</h5>
                         <p class="card-text">
                             <strong>Description:</strong>
-                                ${jobPost.postDesc}</p>
+                            ${jobPost.postDesc}
+                        </p>
                         <p class="card-text">
                             <strong>Experience Required:</strong>
-                                ${jobPost.reqExperience}
-                            years
+                            ${jobPost.reqExperience} years
                         </p>
                         <p class="card-text">
                             <strong>Tech Stack:</strong>
-                        <ul>
-                            <c:forEach var="tech" items="${jobPost.postTechStack}">
-                                <li>${tech}</li>
-                            </c:forEach>
-                        </ul>
+                            <ul>
+                                <c:forEach var="tech" items="${jobPost.postTechStack}">
+                                    <li>${tech}</li>
+                                </c:forEach>
+                            </ul>
                         </p>
                     </div>
                     <div class="card-footer">

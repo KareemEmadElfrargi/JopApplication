@@ -54,6 +54,8 @@ public class JobRepo {
     }
 
     public List<JobPost> getAllJobs() {
+        System.out.println(jobPostList);
+
         return Collections.unmodifiableList(jobPostList);
     }
 }
