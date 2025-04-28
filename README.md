@@ -35,3 +35,5 @@ Before running this project, ensure that you have the following installed on you
 
 ## Video preview
 
+https://github.com/user-attachments/assets/9487839a-397e-4d9f-9d25-e7a0cd8daac5
+
